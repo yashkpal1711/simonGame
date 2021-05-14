@@ -45,18 +45,20 @@ function nextSequence(){
 var level =0;
 var started= false;
 
-    if(!started){
+    
 
         $(document).keypress(function(){
-             $("h1").text("LEVEL"+ level);
+            if(!started){
+
+            $("#level-title").text("Level " + level);
              nextSequence();
            
             started=true;
             
             
-        })
+        }
         
-    }
+    })
 
     function checkAnswer(currentLevel){
         if (gamePattern[currentLevel] === userClickedPattern[currentLevel]) {
